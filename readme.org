@@ -1,0 +1,56 @@
+* IDE Settings
+
+Settings for IDEs.
+
+** Xcode
+
+Key bindings, code snippets, and user breakpoints can be simlinked to
+this repo and =xcode-setup.sh= takes care of this.
+
+*** Preferences
+
+=~/Library/Preferences/com.apple.dt.Xcode.plist= stores preferences, but
+there is weirdness messing with those system-y files.
+
+**** XML
+
+Preference files can be converted to/from XML/binary:
+
+#+BEGIN_SRC sh
+plutil -convert xml1 com.apple.dt.Xcode.plist
+plutil -convert binary1 com.apple.dt.Xcode.plist
+#+END_SRC
+
+This has not been a great way to track this, though.
+
+**** Idempotent Changes
+
+Setting preferences that matter with a script works!
+
+Apply this after Xcode has been opened for the first time and created
+=~/Library/Preferences/com.apple.dt.Xcode.plist=.
+
+**** Other Preferences
+
+There are a few things that have been useful before but didn't appear in
+the expected place in Xcode 26.
+
+- Behaivors
+  - *Build->Fails*: +Show tab named Build
+  - *Running->Pauses*: +Show tab named Debug
+
+Potentially restore these in the future.
+
+** [[https://www.jetbrains.com][Jetbrains]] IDEs
+
+Like [[https://www.jetbrains.com/idea/][IntelliJ]], which for some reason is now referred to more as IDEA.
+
+Not really a thing at the moment, so may be irrelevant. Would be an
+archaeology expidition to install and update ...
+
+- Preferences are stored in
+  =~/Library/Preferences/<Application><Version>= or.
+  - Keymaps are stored in =/keymaps= relative to the preference
+    directory.
+  - Colors are stored in =/colors= relative to the preference directory.
+  - For example, =~/Library/Preferences/Gogland1.0/keymaps/=.
