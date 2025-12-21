@@ -10,3 +10,8 @@ mkdir -p "$xcode_userdata"/KeyBindings
 ln -s "$settings_userdata"/xcdebugger "$xcode_userdata"/
 ln -s "$settings_userdata"/CodeSnippets "$xcode_userdata"/
 ln -s "$settings_userdata"/KeyBindings/vino.idekeybindings "$xcode_userdata"/KeyBindings/
+
+# Try, tenatively
+
+defaults write com.apple.dt.Xcode.plist -string "${SOURCE_DIR}/Xcode"
+defaults write com.apple.dt.Xcode.plist LoadPrefsFromCustomFolder -bool true
